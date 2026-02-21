@@ -54,6 +54,7 @@ model UserRoles {
   roles Roles @relation(fields: [role_id], references: [id], onDelete: Cascade)
 
   @@id([user_id, role_id])
+  @@map("user_roles")
 }
 
 model RolePermissions {
@@ -64,4 +65,5 @@ model RolePermissions {
   permissions Permissions @relation(fields: [permission_id], references: [id], onDelete: Cascade)
 
   @@id([role_id, permission_id])
+  @@map("role_permissions")
 }
